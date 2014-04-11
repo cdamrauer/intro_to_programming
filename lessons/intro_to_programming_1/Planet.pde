@@ -22,23 +22,28 @@ public class Planet{
   }
   
   boolean isCollidingX(int x0, int x1) {
-    if ( loc[0] + mySize / 2 >= x0 || loc[0] - mySize / 2 <= x1 )
+    if ( loc[0] + mySize / 2 >= x1 || loc[0] - mySize / 2 <= x0 )
       return true;
     return false;
   }
 
   boolean isCollidingY(int y0, int y1) {
-    if ( loc[1] + mySize / 2 >= y0 || loc[1] - mySize / 2 <= y1 )
+    if ( loc[1] + mySize / 2 >= y1 || loc[1] - mySize / 2 <= y0 )
       return true;
     return false;
   }
-
-  void checkEdgeBounce() {
-    if (  ) // needs to call some function...
+  
+  
+    void checkEdgeBounce() {
+    if (isCollidingX( 0 , width )) { // needs to call some function...
       dx *= -1;
-    if (  ) // needs to call some function...
+    }
+    if (isCollidingY( 0,  height )){ // needs to call some function...
       dy *= -1;
   }
+}
+
+
   
   void drawPlanet(){
     fill(myColor);
